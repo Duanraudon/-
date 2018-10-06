@@ -42,7 +42,6 @@
 
 ## 编译环境
 
-* Win10操作系统
 * Python3.6语言版本
 * Google Chrome浏览器
 * Pycharm编译软件
@@ -99,7 +98,7 @@ class meijuSpider(Spider):
         last_url = driver.find_element_by_xpath('//div[@id="resource-box"]/div/div/h3/a').get_attribute('href')
         driver.close()
 
-        yield scrapy.Request(last_url,callback = self.parse_meiju)
+        yield scrapy.Request(last_url,callback=self.parse_meiju)
 
     def parse_meiju(self, response):
         info = response.xpath('//li[@class="item"]/div[@class="title"]')
